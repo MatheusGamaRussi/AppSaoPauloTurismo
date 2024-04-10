@@ -13,3 +13,10 @@ Nesta mesma tela, no topo, há uma barra de pesquisas, que filtrará todo ponto 
 
 Por fim, há a tela de locais favoritos, onde são direcionados todos os locais que o usuário salvou como favorito na tela anterior. Assim como o usuário pode adicionar locais aos favoritos, ele também pode remover locais da aba de favoritos, ao pressionar o mesmo botão de favorito.
 </p>
+
+<h3>Links para a Wiki:</h3>
+<p>
+  Home: https://github.com/MatheusGamaRussi/AppSaoPauloTurismo/wiki
+
+  Detalhes: https://github.com/MatheusGamaRussi/AppSaoPauloTurismo/wiki/Detalhes
+</p>
