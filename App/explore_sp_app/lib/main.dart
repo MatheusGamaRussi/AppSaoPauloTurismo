@@ -12,8 +12,27 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData.light(),
         home: Scaffold(
-          body: Center(
-            child: Image.network('https://files.tecnoblog.net/wp-content/uploads/2022/09/stable-diffusion-imagem.jpg?_gl=1*1v36vv4*_ga*MTg3NTcyMDg2Ny4xNzEzNDQzNDUz*_ga_2XDPKDWNEB*MTcxMzQ0MzQ1My4xLjAuMTcxMzQ0MzQ1NC41OS4wLjA.'),
+          body: Column(
+            children: [
+              Image.network(
+                'https://raw.githubusercontent.com/MatheusGamaRussi/AppSaoPauloTurismo/main/Images/paulista.jpg', 
+                alignment: Alignment.topCenter
+              ),
+              const Padding(
+                padding: EdgeInsets.all(16)
+              ),
+              const TextField(decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: 'Email ou Nome do Usuário',
+              ),),
+              const Padding(
+                padding: EdgeInsets.all(16)
+              ),
+              const TextField(decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: 'Senha',
+              ),),
+            ],
           ),
         ),
     );
