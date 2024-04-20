@@ -17,10 +17,10 @@ class CadastroStates extends State<Cadastro> {
             'https://raw.githubusercontent.com/MatheusGamaRussi/AppSaoPauloTurismo/main/Images/paulista.jpg'
           ),
           const SizedBox(
-            height: 50,
+            height: 60,
           ),
           const Padding(
-            padding: EdgeInsets.only(left: 25, right: 25),
+            padding: EdgeInsets.only(left: 50, right: 50),
             child: TextField(
               decoration: InputDecoration(
                 border: OutlineInputBorder(
@@ -32,8 +32,11 @@ class CadastroStates extends State<Cadastro> {
               ),
             ),
           ),
+          const SizedBox(
+            height: 30,
+          ),
           const Padding(
-            padding: EdgeInsets.only(left: 25, right: 25),
+            padding: EdgeInsets.only(left: 50, right: 50),
             child: TextField(
               decoration: InputDecoration(
                 border: OutlineInputBorder(
@@ -45,8 +48,11 @@ class CadastroStates extends State<Cadastro> {
               ),
             ),
           ),
+          const SizedBox(
+            height: 30,
+          ),
           const Padding(
-            padding: EdgeInsets.only(left: 25, right: 25),
+            padding: EdgeInsets.only(left: 50, right: 50),
             child: TextField(
               obscureText: true,
               decoration: InputDecoration(
@@ -59,8 +65,39 @@ class CadastroStates extends State<Cadastro> {
               ),
             ),
           ),
+          const SizedBox(
+            height: 30,
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: 50, right: 50),
+            child: Container(
+              width: getScreenWidth(),
+              height: 60,
+              child: TextButton(
+                onPressed: () {},
+                child: const Text(
+                  'Cadastrar',
+                  style: TextStyle(
+                    color: Color(0xFFd5d5d5),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+                style: TextButton.styleFrom(
+                  backgroundColor: Color(0xFF585454),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
   }
 }
+
+double getScreenWidth() {
+    return WidgetsBinding.instance!.window.physicalSize.width / WidgetsBinding.instance!.window.devicePixelRatio;
+  }
