@@ -1,4 +1,3 @@
-import 'package:explore_sp/cadastro.dart';
 import 'package:explore_sp/login.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +11,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(),
       home: Login(),
     );
