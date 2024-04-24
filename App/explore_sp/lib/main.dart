@@ -1,4 +1,5 @@
 import 'package:explore_sp/cadastro.dart';
+import 'package:explore_sp/login.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +13,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(),
-      home: Cadastro(),
+      home: Login(),
     );
   }
 }

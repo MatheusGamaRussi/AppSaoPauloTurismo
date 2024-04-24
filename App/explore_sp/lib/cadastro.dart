@@ -74,7 +74,9 @@ class CadastroStates extends State<Cadastro> {
               width: getScreenWidth(),
               height: 60,
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pop(context);
+                },
                 child: const Text(
                   'Cadastrar',
                   style: TextStyle(
