@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget{
+  const HomePage({super.key});
+
   @override
   State<StatefulWidget> createState() {
     return HomeStates();
@@ -12,239 +14,204 @@ class HomeStates extends State<HomePage>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF585454),
+        backgroundColor: const Color(0xFF585454),
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
             color: Colors.white,
           ),
         ]
       ),
-      drawer: NavDrawer(),
+      drawer: const NavDrawer(),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
             children: <Widget>[
-              Container(
-                child: Column(
-                  children: <Widget>[
-                    Container(
-                      width: 350,
-                      height: 250,
-                      margin: EdgeInsets.only(top: 60),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25),
-                        color: Color(0xFF929292),
-                      ),
+              Column(
+                children: <Widget>[
+                  Container(
+                    width: 350,
+                    height: 250,
+                    margin: const EdgeInsets.only(top: 60),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      color: const Color(0xFF929292),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 50, right: 50, top: 20),
-                      child: Row(
-                        children: <Widget>[
-                          Text(
-                            "EXEMPLOEXEMPLO",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18
-                            ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 50, right: 50, top: 20),
+                    child: Row(
+                      children: <Widget>[
+                        const Text(
+                          "EXEMPLOEXEMPLO",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18
                           ),
-                          SizedBox(
-                            width: 105,
+                        ),
+                        const SizedBox(
+                          width: 105,
+                        ),
+                        const Favorite(),
+                        IconButton(
+                          onPressed: () {}, 
+                          icon: const Icon(
+                            Icons.place,
                           ),
-                          IconButton(
-                            onPressed: () {}, 
-                            icon: const Icon(
-                              Icons.favorite,
-                            ),
-                          ),
-                          IconButton(
-                            onPressed: () {}, 
-                            icon: const Icon(
-                              Icons.place,
-                            ),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              Container(
-                child: Column(
-                  children: <Widget>[
-                    Container(
-                      width: 350,
-                      height: 250,
-                      margin: EdgeInsets.only(top: 60),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25),
-                        color: Color(0xFF929292),
-                      ),
+              Column(
+                children: <Widget>[
+                  Container(
+                    width: 350,
+                    height: 250,
+                    margin: const EdgeInsets.only(top: 60),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      color: const Color(0xFF929292),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 50, right: 50, top: 20),
-                      child: Row(
-                        children: <Widget>[
-                          Text(
-                            "EXEMPLOEXEMPLO",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18
-                            ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 50, right: 50, top: 20),
+                    child: Row(
+                      children: <Widget>[
+                        const Text(
+                          "EXEMPLOEXEMPLO",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18
                           ),
-                          SizedBox(
-                            width: 105,
+                        ),
+                        const SizedBox(
+                          width: 105,
+                        ),
+                        const Favorite(),
+                        IconButton(
+                          onPressed: () {}, 
+                          icon: const Icon(
+                            Icons.place,
                           ),
-                          IconButton(
-                            onPressed: () {}, 
-                            icon: const Icon(
-                              Icons.favorite,
-                            ),
-                          ),
-                          IconButton(
-                            onPressed: () {}, 
-                            icon: const Icon(
-                              Icons.place,
-                            ),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              Container(
-                child: Column(
-                  children: <Widget>[
-                    Container(
-                      width: 350,
-                      height: 250,
-                      margin: EdgeInsets.only(top: 60),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25),
-                        color: Color(0xFF929292),
-                      ),
+              Column(
+                children: <Widget>[
+                  Container(
+                    width: 350,
+                    height: 250,
+                    margin: const EdgeInsets.only(top: 60),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      color: const Color(0xFF929292),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 50, right: 50, top: 20),
-                      child: Row(
-                        children: <Widget>[
-                          Text(
-                            "EXEMPLOEXEMPLO",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18
-                            ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 50, right: 50, top: 20),
+                    child: Row(
+                      children: <Widget>[
+                        const Text(
+                          "EXEMPLOEXEMPLO",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18
                           ),
-                          SizedBox(
-                            width: 105,
+                        ),
+                        const SizedBox(
+                          width: 105,
+                        ),
+                        const Favorite(),
+                        IconButton(
+                          onPressed: () {}, 
+                          icon: const Icon(
+                            Icons.place,
                           ),
-                          IconButton(
-                            onPressed: () {}, 
-                            icon: const Icon(
-                              Icons.favorite,
-                            ),
-                          ),
-                          IconButton(
-                            onPressed: () {}, 
-                            icon: const Icon(
-                              Icons.place,
-                            ),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              Container(
-                child: Column(
-                  children: <Widget>[
-                    Container(
-                      width: 350,
-                      height: 250,
-                      margin: EdgeInsets.only(top: 60),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25),
-                        color: Color(0xFF929292),
-                      ),
+              Column(
+                children: <Widget>[
+                  Container(
+                    width: 350,
+                    height: 250,
+                    margin: const EdgeInsets.only(top: 60),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      color: const Color(0xFF929292),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 50, right: 50, top: 20),
-                      child: Row(
-                        children: <Widget>[
-                          Text(
-                            "EXEMPLOEXEMPLO",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18
-                            ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 50, right: 50, top: 20),
+                    child: Row(
+                      children: <Widget>[
+                        const Text(
+                          "EXEMPLOEXEMPLO",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18
                           ),
-                          SizedBox(
-                            width: 105,
+                        ),
+                        const SizedBox(
+                          width: 105,
+                        ),
+                        const Favorite(),
+                        IconButton(
+                          onPressed: () {}, 
+                          icon: const Icon(
+                            Icons.place,
                           ),
-                          IconButton(
-                            onPressed: () {}, 
-                            icon: const Icon(
-                              Icons.favorite,
-                            ),
-                          ),
-                          IconButton(
-                            onPressed: () {}, 
-                            icon: const Icon(
-                              Icons.place,
-                            ),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              Container(
-                child: Column(
-                  children: <Widget>[
-                    Container(
-                      width: 350,
-                      height: 250,
-                      margin: EdgeInsets.only(top: 60),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25),
-                        color: Color(0xFF929292),
-                      ),
+              Column(
+                children: <Widget>[
+                  Container(
+                    width: 350,
+                    height: 250,
+                    margin: const EdgeInsets.only(top: 60),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      color: const Color(0xFF929292),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 50, right: 50, top: 20),
-                      child: Row(
-                        children: <Widget>[
-                          Text(
-                            "EXEMPLOEXEMPLO",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18
-                            ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 50, right: 50, top: 20),
+                    child: Row(
+                      children: <Widget>[
+                        const Text(
+                          "EXEMPLOEXEMPLO",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18
                           ),
-                          SizedBox(
-                            width: 105,
+                        ),
+                        const SizedBox(
+                          width: 105,
+                        ),
+                        const Favorite(),
+                        IconButton(
+                          onPressed: () {}, 
+                          icon: const Icon(
+                            Icons.place,
                           ),
-                          IconButton(
-                            onPressed: () {}, 
-                            icon: const Icon(
-                              Icons.favorite,
-                            ),
-                          ),
-                          IconButton(
-                            onPressed: () {}, 
-                            icon: const Icon(
-                              Icons.place,
-                            ),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ],
           ),
@@ -255,6 +222,8 @@ class HomeStates extends State<HomePage>{
 }
 
 class NavDrawer extends StatelessWidget{
+  const NavDrawer({super.key});
+
   @override
   Widget build(BuildContext context) => Drawer(
     child: SingleChildScrollView(
@@ -264,8 +233,8 @@ class NavDrawer extends StatelessWidget{
           Container(
             width: 30,
             height: 90,
-            color: Color(0xFF585454),
-            child: Center(
+            color: const Color(0xFF585454),
+            child: const Center(
               child: Text(
                 'ExploreSP',
                 style: TextStyle(
@@ -280,7 +249,7 @@ class NavDrawer extends StatelessWidget{
             padding: const EdgeInsets.only(top: 10, bottom: 10),
             child: TextButton(
               onPressed: () {},
-              child: Text(
+              child: const Text(
                 'Favoritos',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -294,4 +263,37 @@ class NavDrawer extends StatelessWidget{
       )
     ),
   );
+}
+
+class Favorite extends StatefulWidget{
+  const Favorite({super.key});
+
+  @override
+  State<Favorite> createState() => FavoriteState();
+}
+
+class FavoriteState extends State<Favorite>{
+  // ignore: non_constant_identifier_names
+  bool is_favorite = false;
+
+  void toggleButton(){
+    setState(() {
+      is_favorite = !is_favorite;
+    });
+  }
+  
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: toggleButton,
+      child: is_favorite
+        ? const Icon(
+          Icons.favorite,
+          color: Colors.red,
+        )
+        : const Icon(
+          Icons.favorite_outline
+        ),
+    );
+  }
 }

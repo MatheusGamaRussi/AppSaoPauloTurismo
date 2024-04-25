@@ -1,9 +1,10 @@
-
 import 'package:explore_sp/cadastro.dart';
 import 'package:explore_sp/home.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
+  const Login({super.key});
+
   @override
   State<StatefulWidget> createState() {
     return LoginStates();
@@ -58,7 +59,7 @@ class LoginStates extends State<Login> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Container(
+              SizedBox(
                 width: 175,
                 height: 60,
                 child: TextButton(
@@ -66,23 +67,23 @@ class LoginStates extends State<Login> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => HomePage()
+                        builder: (context) => const HomePage()
                       ),
                     );
                   },
-                  child: Text(
+                  style: TextButton.styleFrom(
+                    backgroundColor: const Color(0xFF585454),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5.0),
+                    
+                    ),
+                  ),
+                  child: const Text(
                     'Continuar',
                     style: TextStyle(
                       color: Color(0xFFd5d5d5),
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
-                    ),
-                  ),
-                  style: TextButton.styleFrom(
-                    backgroundColor: Color(0xFF585454),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5.0),
-                    
                     ),
                   ),
                 ),
@@ -92,7 +93,7 @@ class LoginStates extends State<Login> {
               ),
               Column(
                 children: <Widget>[
-                  Text(
+                  const Text(
                     'Primeira vez aqui?',
                     style: TextStyle(
                       color: Color.fromRGBO(129, 127, 127, 1),
@@ -104,11 +105,11 @@ class LoginStates extends State<Login> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => Cadastro()
+                          builder: (context) => const Cadastro()
                         ),
                       );
                     }, 
-                    child: Text(
+                    child: const Text(
                       'Cadastre-se!',
                       style: TextStyle(
                         color: Color(0xFF585454),
@@ -127,5 +128,6 @@ class LoginStates extends State<Login> {
 }
 
 double getScreenWidth() {
-    return WidgetsBinding.instance!.window.physicalSize.width / WidgetsBinding.instance!.window.devicePixelRatio;
+    // ignore: deprecated_member_use
+    return WidgetsBinding.instance.window.physicalSize.width / WidgetsBinding.instance.window.devicePixelRatio;
   }

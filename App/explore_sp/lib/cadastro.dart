@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Cadastro extends StatefulWidget {
+  const Cadastro({super.key});
+  
   @override
   State<StatefulWidget> createState() {
     return CadastroStates();
@@ -69,26 +71,26 @@ class CadastroStates extends State<Cadastro> {
             height: 30,
           ),
           Padding(
-            padding: EdgeInsets.only(left: 50, right: 50),
-            child: Container(
+            padding: const EdgeInsets.only(left: 50, right: 50),
+            child: SizedBox(
               width: getScreenWidth(),
               height: 60,
               child: TextButton(
                 onPressed: () {
                   Navigator.pop(context);
                 },
+                style: TextButton.styleFrom(
+                  backgroundColor: const Color(0xFF585454),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                ),
                 child: const Text(
                   'Cadastrar',
                   style: TextStyle(
                     color: Color(0xFFd5d5d5),
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
-                  ),
-                ),
-                style: TextButton.styleFrom(
-                  backgroundColor: Color(0xFF585454),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5.0),
                   ),
                 ),
               ),
@@ -101,5 +103,6 @@ class CadastroStates extends State<Cadastro> {
 }
 
 double getScreenWidth() {
-    return WidgetsBinding.instance!.window.physicalSize.width / WidgetsBinding.instance!.window.devicePixelRatio;
+    // ignore: deprecated_member_use
+    return WidgetsBinding.instance.window.physicalSize.width / WidgetsBinding.instance.window.devicePixelRatio;
   }
