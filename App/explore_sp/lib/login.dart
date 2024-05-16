@@ -1,6 +1,14 @@
 import 'package:explore_sp/cadastro.dart';
 import 'package:explore_sp/home.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+class Usuario {
+  final String nome;
+  final String senha;
+
+  const Usuario(this.nome, this.senha);
+}
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -12,14 +20,21 @@ class Login extends StatefulWidget {
 }
 
 class LoginStates extends State<Login> {
+  String n_usu = '';
+  String s_usu = '';
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: <Widget>[
           Image.network(
-            'https://raw.githubusercontent.com/MatheusGamaRussi/AppSaoPauloTurismo/main/Images/paulista.jpg'
-          ),
+              'https://raw.githubusercontent.com/MatheusGamaRussi/AppSaoPauloTurismo/main/Images/paulista.jpg'),
           const SizedBox(
             height: 105,
           ),
@@ -28,11 +43,13 @@ class LoginStates extends State<Login> {
             child: TextField(
               decoration: InputDecoration(
                 border: OutlineInputBorder(
-                  borderSide: BorderSide(color: Color.fromRGBO(240, 236, 236, 1.0)), // Cor da borda
+                  borderSide: BorderSide(
+                      color:
+                          Color.fromRGBO(240, 236, 236, 1.0)), // Cor da borda
                 ),
                 filled: true,
                 fillColor: Color.fromRGBO(240, 236, 236, 1.0),
-                labelText: 'E-mail ou Nome de usuário',
+                labelText: 'Nome de usuário',
               ),
             ),
           ),
@@ -45,7 +62,9 @@ class LoginStates extends State<Login> {
               obscureText: true,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
-                  borderSide: BorderSide(color: Color.fromRGBO(240, 236, 236, 1.0)), // Cor da borda
+                  borderSide: BorderSide(
+                      color:
+                          Color.fromRGBO(240, 236, 236, 1.0)), // Cor da borda
                 ),
                 filled: true,
                 fillColor: Color.fromRGBO(240, 236, 236, 1.0),
@@ -66,16 +85,13 @@ class LoginStates extends State<Login> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) => const HomePage()
-                      ),
+                      MaterialPageRoute(builder: (context) => const HomePage()),
                     );
                   },
                   style: TextButton.styleFrom(
                     backgroundColor: const Color(0xFF585454),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5.0),
-                    
                     ),
                   ),
                   child: const Text(
@@ -105,10 +121,9 @@ class LoginStates extends State<Login> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const Cadastro()
-                        ),
+                            builder: (context) => const Cadastro()),
                       );
-                    }, 
+                    },
                     child: const Text(
                       'Cadastre-se!',
                       style: TextStyle(
@@ -128,6 +143,8 @@ class LoginStates extends State<Login> {
 }
 
 double getScreenWidth() {
-    // ignore: deprecated_member_use
-    return WidgetsBinding.instance.window.physicalSize.width / WidgetsBinding.instance.window.devicePixelRatio;
-  }
+  // ignore: deprecated_member_use
+  return WidgetsBinding.instance.window.physicalSize.width /
+      // ignore: deprecated_member_use
+      WidgetsBinding.instance.window.devicePixelRatio;
+}
