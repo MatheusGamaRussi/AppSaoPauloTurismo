@@ -5,9 +5,8 @@ import 'package:flutter/services.dart';
 
 class Usuario {
   final String nome;
-  final String senha;
 
-  const Usuario(this.nome, this.senha);
+  const Usuario(this.nome);
 }
 
 class Login extends StatefulWidget {
@@ -21,7 +20,6 @@ class Login extends StatefulWidget {
 
 class LoginStates extends State<Login> {
   String n_usu = '';
-  String s_usu = '';
 
   @override
   void initState() {
@@ -38,10 +36,10 @@ class LoginStates extends State<Login> {
           const SizedBox(
             height: 105,
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(left: 50, right: 50),
-            child: TextField(
-              decoration: InputDecoration(
+            child: TextFormField(
+              decoration: const InputDecoration(
                 border: OutlineInputBorder(
                   borderSide: BorderSide(
                       color:
@@ -51,16 +49,19 @@ class LoginStates extends State<Login> {
                 fillColor: Color.fromRGBO(240, 236, 236, 1.0),
                 labelText: 'Nome de usuário',
               ),
+              onChanged: (value) {
+                n_usu = value;
+              },
             ),
           ),
           const SizedBox(
             height: 30,
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(left: 50, right: 50),
-            child: TextField(
+            child: TextFormField(
               obscureText: true,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: OutlineInputBorder(
                   borderSide: BorderSide(
                       color:
@@ -83,9 +84,13 @@ class LoginStates extends State<Login> {
                 height: 60,
                 child: TextButton(
                   onPressed: () {
+                    Usuario usu = Usuario(n_usu);
+
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const HomePage()),
+                      MaterialPageRoute(
+                          builder: (context) => const HomePage(),
+                          settings: RouteSettings(arguments: usu)),
                     );
                   },
                   style: TextButton.styleFrom(

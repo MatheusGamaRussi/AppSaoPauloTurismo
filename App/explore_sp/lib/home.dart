@@ -1,3 +1,5 @@
+import 'package:explore_sp/local.dart';
+import 'package:explore_sp/login.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,6 +14,17 @@ class HomePage extends StatefulWidget {
 class HomeStates extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    final usuario = ModalRoute.of(context)!.settings.arguments as Usuario;
+
+    List<Local> locais = List.generate(
+        5,
+        (i) => Local(
+            'Vila Madalena',
+            'Rua Jorge Nunes Kehdi 182, São Paulo, SP,',
+            'foto',
+            'lugar maneiro',
+            3));
+
     return Scaffold(
       appBar: AppBar(backgroundColor: const Color(0xFF585454), actions: [
         IconButton(
@@ -27,182 +40,18 @@ class HomeStates extends State<HomePage> {
             children: <Widget>[
               Column(
                 children: <Widget>[
-                  Text("Seja bem vindo, "),
-                  Container(
-                    width: 350,
-                    height: 250,
-                    margin: const EdgeInsets.only(top: 60),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
-                      color: const Color(0xFF929292),
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(left: 50, right: 50, top: 20),
-                    child: Row(
-                      children: <Widget>[
-                        const Text(
-                          "EXEMPLOEXEMPLO",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 18),
+                  Text("Seja bem vindo, " + usuario.nome),
+                  ListView.builder(
+                    itemCount: locais.length,
+                    shrinkWrap: true,
+                    scrollDirection: Axis.vertical,
+                    itemBuilder: (BuildContext, index) {
+                      return Card(
+                        child: ListTile(
+                          title: Text(locais[index].nome),
                         ),
-                        const SizedBox(
-                          width: 105,
-                        ),
-                        const Favorite(),
-                        IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.place,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              Column(
-                children: <Widget>[
-                  Container(
-                    width: 350,
-                    height: 250,
-                    margin: const EdgeInsets.only(top: 60),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
-                      color: const Color(0xFF929292),
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(left: 50, right: 50, top: 20),
-                    child: Row(
-                      children: <Widget>[
-                        const Text(
-                          "EXEMPLOEXEMPLO",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 18),
-                        ),
-                        const SizedBox(
-                          width: 105,
-                        ),
-                        const Favorite(),
-                        IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.place,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              Column(
-                children: <Widget>[
-                  Container(
-                    width: 350,
-                    height: 250,
-                    margin: const EdgeInsets.only(top: 60),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
-                      color: const Color(0xFF929292),
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(left: 50, right: 50, top: 20),
-                    child: Row(
-                      children: <Widget>[
-                        const Text(
-                          "EXEMPLOEXEMPLO",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 18),
-                        ),
-                        const SizedBox(
-                          width: 105,
-                        ),
-                        const Favorite(),
-                        IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.place,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              Column(
-                children: <Widget>[
-                  Container(
-                    width: 350,
-                    height: 250,
-                    margin: const EdgeInsets.only(top: 60),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
-                      color: const Color(0xFF929292),
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(left: 50, right: 50, top: 20),
-                    child: Row(
-                      children: <Widget>[
-                        const Text(
-                          "EXEMPLOEXEMPLO",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 18),
-                        ),
-                        const SizedBox(
-                          width: 105,
-                        ),
-                        const Favorite(),
-                        IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.place,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              Column(
-                children: <Widget>[
-                  Container(
-                    width: 350,
-                    height: 250,
-                    margin: const EdgeInsets.only(top: 60),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
-                      color: const Color(0xFF929292),
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(left: 50, right: 50, top: 20),
-                    child: Row(
-                      children: <Widget>[
-                        const Text(
-                          "EXEMPLOEXEMPLO",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 18),
-                        ),
-                        const SizedBox(
-                          width: 105,
-                        ),
-                        const Favorite(),
-                        IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.place,
-                          ),
-                        ),
-                      ],
-                    ),
+                      );
+                    },
                   ),
                 ],
               ),
