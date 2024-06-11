@@ -17,13 +17,13 @@ class HomeStates extends State<HomePage> {
     final usuario = ModalRoute.of(context)!.settings.arguments as Usuario;
 
     List<Local> locais = List.generate(
-        5,
+        2,
         (i) => Local(
-            'Vila Madalena',
-            'Rua Jorge Nunes Kehdi 182, São Paulo, SP,',
-            'foto',
-            'lugar maneiro',
-            3));
+            'Ponto $i:',
+            'Endereco:',
+            'img/locais/$i.jpg',
+            '',
+            5));
 
     return Scaffold(
       appBar: AppBar(backgroundColor: const Color(0xFF585454), actions: [
@@ -41,6 +41,7 @@ class HomeStates extends State<HomePage> {
               Column(
                 children: <Widget>[
                   Text("Seja bem vindo, " + usuario.nome),
+
                   ListView.builder(
                     itemCount: locais.length,
                     shrinkWrap: true,
@@ -48,6 +49,7 @@ class HomeStates extends State<HomePage> {
                     itemBuilder: (BuildContext, index) {
                       return Card(
                         child: ListTile(
+                          leading: Image.asset(locais[index].url_foto),
                           title: Text(locais[index].nome),
                         ),
                       );
