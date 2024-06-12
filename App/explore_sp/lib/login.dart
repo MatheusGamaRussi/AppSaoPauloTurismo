@@ -39,20 +39,20 @@ class LoginStates extends State<Login> {
           Padding(
             padding: EdgeInsets.only(left: 50, right: 50),
             child: TextFormField(
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(
-                      color:
-                          Color.fromRGBO(240, 236, 236, 1.0)), // Cor da borda
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(
+                        color:
+                            Color.fromRGBO(240, 236, 236, 1.0)), // Cor da borda
+                  ),
+                  filled: true,
+                  fillColor: Color.fromRGBO(240, 236, 236, 1.0),
+                  labelText: 'Nome de usuário',
                 ),
-                filled: true,
-                fillColor: Color.fromRGBO(240, 236, 236, 1.0),
-                labelText: 'Nome de usuário',
-              ),
-              onChanged: (value) {
-                n_usu = value;
-              },
-            ),
+                onChanged: (value) {
+                  n_usu = value;
+                },
+                inputFormatters: [LengthLimitingTextInputFormatter(50)]),
           ),
           const SizedBox(
             height: 30,
@@ -71,6 +71,7 @@ class LoginStates extends State<Login> {
                 fillColor: Color.fromRGBO(240, 236, 236, 1.0),
                 labelText: 'Senha',
               ),
+              inputFormatters: [LengthLimitingTextInputFormatter(50)],
             ),
           ),
           const SizedBox(
