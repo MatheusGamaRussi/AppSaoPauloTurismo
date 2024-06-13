@@ -1,5 +1,5 @@
 <h1>Explore SP - São Paulo como você não conhece</h1>
-<h3>Integrantes: Marina Sarjani Bohlant & Matheus Gama Russi</h3>
+<h3>Integrantes: Pedro dos Santos Pequini & Matheus Gama Russi</h3>
 <hr>
 <h3>Descrição do App:</h3>
 <p align="justify">
