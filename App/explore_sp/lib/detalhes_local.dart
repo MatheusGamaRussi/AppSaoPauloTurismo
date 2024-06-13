@@ -20,10 +20,10 @@ class DetalhesLocal extends StatelessWidget {
                     borderRadius: BorderRadius.circular(25),
                     boxShadow: [
                       BoxShadow(
-                        color: Color.fromARGB(255, 0, 0, 0).withOpacity(0.1),
-                        spreadRadius: 1,
-                        blurRadius: 4,
-                        offset: Offset(0, 4))
+                          color: Color.fromARGB(255, 0, 0, 0).withOpacity(0.1),
+                          spreadRadius: 1,
+                          blurRadius: 4,
+                          offset: Offset(0, 4))
                     ],
                     image: DecorationImage(
                       image: AssetImage(local.url_foto),
@@ -38,10 +38,10 @@ class DetalhesLocal extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: [
                       BoxShadow(
-                        color: Color.fromARGB(255, 0, 0, 0).withOpacity(0.1),
-                        spreadRadius: 1,
-                        blurRadius: 4,
-                        offset: Offset(0, 4))
+                          color: Color.fromARGB(255, 0, 0, 0).withOpacity(0.1),
+                          spreadRadius: 1,
+                          blurRadius: 4,
+                          offset: Offset(0, 4))
                     ]),
                 child: Column(
                   children: <Widget>[
