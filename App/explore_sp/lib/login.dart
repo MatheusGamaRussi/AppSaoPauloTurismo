@@ -1,3 +1,4 @@
+import 'package:explore_sp/cadastro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:explore_sp/home.dart';  // Ajuste os imports conforme necessário
@@ -27,8 +28,7 @@ class LoginStates extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
+      body: SingleChildScrollView(
         child: Form(
           key: _formKey,
           child: Column(
@@ -36,7 +36,19 @@ class LoginStates extends State<Login> {
               Image.network(
                 'https://raw.githubusercontent.com/MatheusGamaRussi/AppSaoPauloTurismo/main/Images/paulista.jpg',
               ),
-              const SizedBox(height: 105),
+              const SizedBox(height: 30),
+              
+              const Center(
+                child: Text(
+                  'Login',
+                  style: TextStyle(
+                    color:  Color(0xFF585454),
+                    fontSize: 30.0,
+                  ),
+                ),                
+              ),
+
+              const SizedBox(height: 30),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 50),
                 child: TextFormField(
@@ -73,6 +85,32 @@ class LoginStates extends State<Login> {
                     ),
                     filled: true,
                     fillColor: Color.fromRGBO(240, 236, 236, 1.0),
+                    labelText: 'E-mail',
+                  ),
+                  validator: (value) {
+                    RegExp emailRegex = RegExp(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$');
+                    if (value == null || value.isEmpty) {
+                      return 'Por favor insira um email válido';
+                    } else if (!emailRegex.hasMatch(value)) {
+                      return 'Email inválido';
+                    }
+                    return null;
+                  },
+                  inputFormatters: [LengthLimitingTextInputFormatter(50)],
+                ),
+              ),
+
+              const SizedBox(height: 30),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 50),
+                child: TextFormField(
+                  obscureText: true,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Color.fromRGBO(240, 236, 236, 1.0)), // Cor da borda
+                    ),
+                    filled: true,
+                    fillColor: Color.fromRGBO(240, 236, 236, 1.0),
                     labelText: 'Senha',
                   ),
                   validator: (value) {
@@ -84,6 +122,7 @@ class LoginStates extends State<Login> {
                   inputFormatters: [LengthLimitingTextInputFormatter(50)],
                 ),
               ),
+
               const SizedBox(height: 30),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -132,10 +171,7 @@ class LoginStates extends State<Login> {
                       ),
                       TextButton(
                         onPressed: () {
-                          Navigator.pop(context);
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(content: Text('Usuário cadastrado com sucesso!')),
-                          );
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const Cadastro()));
                         },
                         child: const Text(
                           'Cadastre-se!',
@@ -143,12 +179,13 @@ class LoginStates extends State<Login> {
                             color: Color(0xFF585454),
                             fontWeight: FontWeight.bold,
                           ),
-                        ),
+                        ),                        
                       ),
                     ],
                   ),
                 ],
               ),
+              const SizedBox(height: 12.0,)
             ],
           ),
         ),
