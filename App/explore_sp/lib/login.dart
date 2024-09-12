@@ -1,7 +1,6 @@
-import 'package:explore_sp/cadastro.dart';
-import 'package:explore_sp/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:explore_sp/home.dart';  // Ajuste os imports conforme necessário
 
 class Usuario {
   final String nome;
@@ -13,13 +12,12 @@ class Login extends StatefulWidget {
   const Login({super.key});
 
   @override
-  State<StatefulWidget> createState() {
-    return LoginStates();
-  }
+  State<Login> createState() => LoginStates();
 }
 
 class LoginStates extends State<Login> {
-  String n_usu = '';
+  final _formKey = GlobalKey<FormState>();
+  String _nUsu = '';
 
   @override
   void initState() {
@@ -29,128 +27,136 @@ class LoginStates extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: <Widget>[
-          Image.network(
-              'https://raw.githubusercontent.com/MatheusGamaRussi/AppSaoPauloTurismo/main/Images/paulista.jpg'),
-          const SizedBox(
-            height: 105,
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 50, right: 50),
-            child: TextFormField(
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide(
-                        color:
-                            Color.fromRGBO(240, 236, 236, 1.0)), // Cor da borda
-                  ),
-                  filled: true,
-                  fillColor: Color.fromRGBO(240, 236, 236, 1.0),
-                  labelText: 'Nome de usuário',
-                ),
-                onChanged: (value) {
-                  n_usu = value;
-                },
-                inputFormatters: [LengthLimitingTextInputFormatter(50)]),
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 50, right: 50),
-            child: TextFormField(
-              obscureText: true,
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(
-                      color:
-                          Color.fromRGBO(240, 236, 236, 1.0)), // Cor da borda
-                ),
-                filled: true,
-                fillColor: Color.fromRGBO(240, 236, 236, 1.0),
-                labelText: 'Senha',
-              ),
-              inputFormatters: [LengthLimitingTextInputFormatter(50)],
-            ),
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Form(
+          key: _formKey,
+          child: Column(
             children: <Widget>[
-              SizedBox(
-                width: 175,
-                height: 60,
-                child: TextButton(
-                  onPressed: () {
-                    Usuario usu = Usuario(n_usu);
-
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const HomePage(),
-                          settings: RouteSettings(arguments: usu)),
-                    );
+              Image.network(
+                'https://raw.githubusercontent.com/MatheusGamaRussi/AppSaoPauloTurismo/main/Images/paulista.jpg',
+              ),
+              const SizedBox(height: 105),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 50),
+                child: TextFormField(
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Color.fromRGBO(240, 236, 236, 1.0)), // Cor da borda
+                    ),
+                    filled: true,
+                    fillColor: Color.fromRGBO(240, 236, 236, 1.0),
+                    labelText: 'Nome de usuário',
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Por favor insira um Nome';
+                    }
+                    return null;
                   },
-                  style: TextButton.styleFrom(
-                    backgroundColor: const Color(0xFF585454),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5.0),
-                    ),
-                  ),
-                  child: const Text(
-                    'Continuar',
-                    style: TextStyle(
-                      color: Color(0xFFd5d5d5),
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                    ),
-                  ),
+                  onChanged: (value) {
+                    setState(() {
+                      _nUsu = value;
+                    });
+                  },
+                  inputFormatters: [LengthLimitingTextInputFormatter(50)],
                 ),
               ),
-              const SizedBox(
-                width: 60,
-              ),
-              Column(
-                children: <Widget>[
-                  const Text(
-                    'Primeira vez aqui?',
-                    style: TextStyle(
-                      color: Color.fromRGBO(129, 127, 127, 1),
-                      fontWeight: FontWeight.bold,
+              const SizedBox(height: 30),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 50),
+                child: TextFormField(
+                  obscureText: true,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Color.fromRGBO(240, 236, 236, 1.0)), // Cor da borda
                     ),
+                    filled: true,
+                    fillColor: Color.fromRGBO(240, 236, 236, 1.0),
+                    labelText: 'Senha',
                   ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const Cadastro()),
-                      );
-                    },
-                    child: const Text(
-                      'Cadastre-se!',
-                      style: TextStyle(
-                        color: Color(0xFF585454),
-                        fontWeight: FontWeight.bold,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Por favor insira uma senha';
+                    }
+                    return null;
+                  },
+                  inputFormatters: [LengthLimitingTextInputFormatter(50)],
+                ),
+              ),
+              const SizedBox(height: 30),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  SizedBox(
+                    width: 175,
+                    height: 60,
+                    child: TextButton(
+                      onPressed: () {
+                        if (_formKey.currentState?.validate() ?? false) {
+                          Usuario usu = Usuario(_nUsu);
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const HomePage(),
+                              settings: RouteSettings(arguments: usu),
+                            ),
+                          );
+                        }
+                      },
+                      style: TextButton.styleFrom(
+                        backgroundColor: const Color(0xFF585454),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                        ),
+                      ),
+                      child: const Text(
+                        'Continuar',
+                        style: TextStyle(
+                          color: Color(0xFFd5d5d5),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
                       ),
                     ),
-                  )
+                  ),
+                  const SizedBox(width: 60),
+                  Column(
+                    children: <Widget>[
+                      const Text(
+                        'Primeira vez aqui?',
+                        style: TextStyle(
+                          color: Color.fromRGBO(129, 127, 127, 1),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text('Usuário cadastrado com sucesso!')),
+                          );
+                        },
+                        child: const Text(
+                          'Cadastre-se!',
+                          style: TextStyle(
+                            color: Color(0xFF585454),
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
-              )
+              ),
             ],
-          )
-        ],
+          ),
+        ),
       ),
     );
   }
 }
 
-double getScreenWidth() {
-  // ignore: deprecated_member_use
-  return WidgetsBinding.instance.window.physicalSize.width /
-      // ignore: deprecated_member_use
-      WidgetsBinding.instance.window.devicePixelRatio;
+double getScreenWidth(BuildContext context) {
+  return MediaQuery.of(context).size.width;
 }
