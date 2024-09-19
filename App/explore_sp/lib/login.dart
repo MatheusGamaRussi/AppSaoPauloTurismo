@@ -78,7 +78,6 @@ class LoginStates extends State<Login> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 50),
                 child: TextFormField(
-                  obscureText: true,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(
                       borderSide: BorderSide(color: Color.fromRGBO(240, 236, 236, 1.0)), // Cor da borda

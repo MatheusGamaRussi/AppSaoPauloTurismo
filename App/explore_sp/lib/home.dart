@@ -2,6 +2,7 @@ import 'package:explore_sp/detalhes_local.dart';
 import 'package:explore_sp/login.dart';
 import 'package:flutter/material.dart';
 import 'package:explore_sp/local.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -11,6 +12,18 @@ class HomePage extends StatefulWidget {
     return HomeStates();
   }
 }
+
+Future<void> EnviarMaps(String uri_button) async {
+  try {
+    final Uri url = Uri.parse(uri_button);
+      if (!await launchUrl(url)) {
+          throw Exception('Could not launch $url');
+      }
+  } catch (e) {
+    print("Deu não ó");
+  }
+}
+
 
 class HomeStates extends State<HomePage> {
   String n_local = '';
@@ -157,8 +170,8 @@ class HomeStates extends State<HomePage> {
                         ),
                         const Favorite(),
                         IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
+                          onPressed: () => EnviarMaps('https://www.google.com.br/maps/place/Museu+de+Arte+de+S%C3%A3o+Paulo+Assis+Chateaubriand/@-23.5614091,-46.6584568,17z/data=!3m1!4b1!4m6!3m5!1s0x94ce59ceb1eb771f:0xe904f6a669744da1!8m2!3d-23.561414!4d-46.6558819!16zL20vMDJfazR2?entry=ttu&g_ep=EgoyMDI0MDkxNi4wIKXMDSoASAFQAw%3D%3D'),
+                          icon: Icon(
                             Icons.place,
                           ),
                         ),
