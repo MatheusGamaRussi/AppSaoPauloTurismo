@@ -112,7 +112,7 @@ class HomeStates extends State<HomePage> {
                         ),
                         const Favorite(),
                         IconButton(
-                          onPressed: () {},
+                          onPressed: () => EnviarMaps('https://www.google.com.br/maps/place/Museu+de+Arte+de+S%C3%A3o+Paulo+Assis+Chateaubriand/@-23.5614091,-46.6584568,17z/data=!3m1!4b1!4m6!3m5!1s0x94ce59ceb1eb771f:0xe904f6a669744da1!8m2!3d-23.561414!4d-46.6558819!16zL20vMDJfazR2?entry=ttu&g_ep=EgoyMDI0MDkxNi4wIKXMDSoASAFQAw%3D%3D'),
                           icon: const Icon(
                             Icons.place,
                           ),
@@ -170,7 +170,7 @@ class HomeStates extends State<HomePage> {
                         ),
                         const Favorite(),
                         IconButton(
-                          onPressed: () => EnviarMaps('https://www.google.com.br/maps/place/Museu+de+Arte+de+S%C3%A3o+Paulo+Assis+Chateaubriand/@-23.5614091,-46.6584568,17z/data=!3m1!4b1!4m6!3m5!1s0x94ce59ceb1eb771f:0xe904f6a669744da1!8m2!3d-23.561414!4d-46.6558819!16zL20vMDJfazR2?entry=ttu&g_ep=EgoyMDI0MDkxNi4wIKXMDSoASAFQAw%3D%3D'),
+                          onPressed: () => EnviarMaps('https://www.google.com.br/maps/place/Galeria+do+Rock/@-23.5435165,-46.6411214,17z/data=!3m1!4b1!4m6!3m5!1s0x94ce58519cff9bc3:0x6aa55e7150be1971!8m2!3d-23.5435214!4d-46.6385411!16s%2Fg%2F122nzgfl?entry=ttu&g_ep=EgoyMDI0MDkxNi4wIKXMDSoASAFQAw%3D%3D'),
                           icon: Icon(
                             Icons.place,
                           ),
@@ -228,7 +228,7 @@ class HomeStates extends State<HomePage> {
                         ),
                         const Favorite(),
                         IconButton(
-                          onPressed: () {},
+                          onPressed: () => EnviarMaps('https://www.google.com.br/maps/place/Farol+Santander/@-23.5456861,-46.6366109,17z/data=!3m1!4b1!4m6!3m5!1s0x94ce5855009a948d:0xd1203c2a6f62b6a9!8m2!3d-23.545691!4d-46.6340306!16s%2Fg%2F1jky3rlrl?entry=ttu&g_ep=EgoyMDI0MDkxNi4wIKXMDSoASAFQAw%3D%3D'),
                           icon: const Icon(
                             Icons.place,
                           ),
