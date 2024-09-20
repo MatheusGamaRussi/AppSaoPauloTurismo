@@ -23,4 +23,4 @@ Por fim, há a tela de locais favoritos, onde são direcionados todos os locais 
   Desenvolvimento: https://github.com/MatheusGamaRussi/AppSaoPauloTurismo/wiki/Desenvolvimento
 </p>
 
-<h3>Vídeo de exibição do App: https://youtu.be/6pfNaCv03Wc</h3>
+<h3>Vídeo de exibição do App: https://youtu.be/8_fGN9HqFnI?si=-ZkUx-6vvW4rH0HM</h3>
